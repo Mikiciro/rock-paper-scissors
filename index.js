@@ -5,14 +5,16 @@ function getComputerChoise() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection == "Rock" && computerSelection == "Scissors") {
-        return "You win! Rock beat Scissors";
-    } else if (playerSelection == "Rock" && computerSelection == "Paper"){
-        return "You lose! Paper beat Rock";
-    } else {
-        return "Draw!";
-    }
+  if (playerSelection == "Rock" && computerSelection == "Scissors") {
+    return "You win! Rock beat Scissors";
+  } else if (playerSelection == "Rock" && computerSelection == "Paper") {
+    return "You lose! Paper beat Rock";
+  } else {
+    return "Draw!";
+  }
 }
+
+//riprovare a renderla case insensitive e provare la funzione con switch invece che if
 
 const playerSelection = "Rock";
 const computerSelection = getComputerChoise();
