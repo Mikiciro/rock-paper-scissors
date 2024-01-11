@@ -14,8 +14,6 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-//riprovare a renderla case insensitive e provare la funzione con switch invece che if
-
 const playerSelection = "Rock";
 const computerSelection = getComputerChoise();
 console.log("His choise is: " + computerSelection);
