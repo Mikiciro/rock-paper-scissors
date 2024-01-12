@@ -1,5 +1,6 @@
 const choises = ["Rock", "Paper", "Scissors"];
 
+//ricontrollare se funzione random è scritta correttamente
 function getComputerChoise() {
   return choises[Math.floor(Math.random() * choises.length)];
 }
@@ -52,16 +53,17 @@ function game(){
   }
   console.log(result);
 
+//sostituiti i console log con alert in modo che compaia a schermo chi vince
   if (michele > computer) {
-    console.log("ha vinto michele");
+    alert("ha vinto michele");
   } else if (michele == computer){
-    console.log("pareggio");
+    alert("pareggio");
   } else {
-    console.log("ha vinto il pc");
+    alert("ha vinto il pc");
   }
 }
 //migliorare algoritmo vittorie
-//
+//accorpare if vittorie e if sconfitte
 function playRound(playerSelection, computerSelection) {
 
   if (equals(playerSelection, computerSelection)) { //inizialmente l'ho scritta senza la funzione equals e funzionava male
