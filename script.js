@@ -3,7 +3,7 @@ const choises = ["Rock", "Paper", "Scissors"];
 function getComputerChoise() {
   return choises[Math.floor(Math.random() * choises.length)];
 }
-//modificare con un loop
+//modificare con un loop?
 function game(){
   var michele = 0;
   var computer = 0;
@@ -61,14 +61,15 @@ function game(){
   }
 }
 //migliorare algoritmo vittorie
-//quanto è la stessa giocata è sempre un pareggio
+//
 function playRound(playerSelection, computerSelection) {
-  if (equals(playerSelection, "paper") && equals(computerSelection, "rock")) {
-    return "You win! " + playerSelection + " beat " + computerSelection ;
+
+  if (equals(playerSelection, computerSelection)) { //inizialmente l'ho scritta senza la funzione equals e funzionava male
+    return "Draw";
   }
 
-  if (equals(playerSelection, "paper") && equals(computerSelection, "paper")) {
-    return "Draw!";
+  if (equals(playerSelection, "paper") && equals(computerSelection, "rock")) {
+    return "You win! " + playerSelection + " beat " + computerSelection ;
   }
 
   if (equals(playerSelection, "paper") && equals(computerSelection, "scissors")) {
@@ -79,20 +80,12 @@ function playRound(playerSelection, computerSelection) {
     return "You win! " + playerSelection + " beat " + computerSelection ;
   }
 
-  if (equals(playerSelection, "rock") && equals(computerSelection, "rock")) {
-    return "Draw!";
-  }
-
   if (equals(playerSelection, "rock") && equals(computerSelection, "paper")) {
     return "You lose! " + computerSelection + " beat " + playerSelection ;
   }
 
   if (equals(playerSelection, "scissors") && equals(computerSelection, "paper")) {
     return "You win! " + playerSelection + " beat " + computerSelection ;
-  }
-
-  if (equals(playerSelection, "scissors") && equals(computerSelection, "scissors")) {
-    return "Draw!";
   }
 
   if (equals(playerSelection, "scissors") && equals(computerSelection, "rock")) {
