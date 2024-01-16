@@ -52,7 +52,6 @@ function game() {
   }
   console.log(result);
 
-  //sostituiti i console log con alert in modo che compaia a schermo chi vince
   if (michele > computer) {
     alert("Greatings! You win!");
   } else if (michele == computer) {
@@ -61,35 +60,32 @@ function game() {
     alert("Sorry! You lose!");
   }
 }
-//migliorare algoritmo vittorie
-//accorpare if vittorie e if sconfitte
 
+//migliorare algoritmo vittorie
 function playRound(playerSelection, computerSelection) {
+  var winAgainst = {
+    paper: "rock",
+    scissors: "paper",
+    rock: "scissors",
+  };
+
   if (equals(playerSelection, computerSelection)) {
     return "Draw";
   }
-
-  if (equals(playerSelection, "paper") && equals(computerSelection, "rock") || 
-    (equals(playerSelection, "rock") && equals(computerSelection, "scissors")) ||
-    (equals(playerSelection, "scissors") && equals(computerSelection, "paper"))    
-    ) {
+  if (equals(winAgainst[playerSelection], computerSelection)) {
     return "You win! " + playerSelection + " beat " + computerSelection;
-  }
-
-  if (equals(playerSelection, "paper") && equals(computerSelection, "scissors") ||
-    (equals(playerSelection, "rock") && equals(computerSelection, "paper")) ||
-    (equals(playerSelection, "scissors") && equals(computerSelection, "rock"))  
-  ) {
+  } else {
     return "You lose! " + computerSelection + " beat " + playerSelection;
-  } 
+  }
 }
 
 function equals(a, b) {
   return a.toLowerCase() == b.toLowerCase();
 }
 
-function testPlayRound() {
+//FUNZIONE DEI TEST
 
+function testPlayRound() {
   if (playRound("paper", "scissors") == "You lose! scissors beat paper") {
     console.log("test ok");
   } else {
@@ -142,9 +138,8 @@ function testPlayRound() {
     console.log("test ok");
   } else {
     console.log("test ko");
-  }  
-  
+  }
 }
 
-// game();
 testPlayRound();
+game();
