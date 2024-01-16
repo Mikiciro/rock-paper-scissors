@@ -3,12 +3,13 @@ const choises = ["Rock", "Paper", "Scissors"];
 function getComputerChoise() {
   return choises[Math.floor(Math.random() * choises.length)];
 }
-//modificare con un loop?
+
 function game() {
   var michele = 0;
   var computer = 0;
+  var round = prompt("Select number of round");
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < round; i++) {
     var result = playRound(prompt(), getComputerChoise());
 
     if (result.includes("win")) {
