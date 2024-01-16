@@ -1,6 +1,5 @@
 const choises = ["Rock", "Paper", "Scissors"];
 
-//ricontrollare se funzione random è scritta correttamente
 function getComputerChoise() {
   return choises[Math.floor(Math.random() * choises.length)];
 }
@@ -66,32 +65,21 @@ function game() {
 //accorpare if vittorie e if sconfitte
 
 function playRound(playerSelection, computerSelection) {
-  //inizialmente l'if del pareggio l'ho scritto senza la funzione equals e funzionava male
   if (equals(playerSelection, computerSelection)) {
     return "Draw";
   }
 
-  if (equals(playerSelection, "paper") && equals(computerSelection, "rock")) {
+  if (equals(playerSelection, "paper") && equals(computerSelection, "rock") || 
+    (equals(playerSelection, "rock") && equals(computerSelection, "scissors")) ||
+    (equals(playerSelection, "scissors") && equals(computerSelection, "paper"))    
+    ) {
     return "You win! " + playerSelection + " beat " + computerSelection;
   }
 
-  if (equals(playerSelection, "rock") && equals(computerSelection, "scissors")) {
-    return "You win! " + playerSelection + " beat " + computerSelection;
-  }
-
-  if (equals(playerSelection, "scissors") && equals(computerSelection, "paper")) {
-    return "You win! " + playerSelection + " beat " + computerSelection;
-  }
-
-  if (equals(playerSelection, "paper") && equals(computerSelection, "scissors")) {
-    return "You lose! " + computerSelection + " beat " + playerSelection;
-  }
-
-  if (equals(playerSelection, "rock") && equals(computerSelection, "paper")) {
-      return "You lose! " + computerSelection + " beat " + playerSelection;
-    }
-
-  if (equals(playerSelection, "scissors") && equals(computerSelection, "rock")) {
+  if (equals(playerSelection, "paper") && equals(computerSelection, "scissors") ||
+    (equals(playerSelection, "rock") && equals(computerSelection, "paper")) ||
+    (equals(playerSelection, "scissors") && equals(computerSelection, "rock"))  
+  ) {
     return "You lose! " + computerSelection + " beat " + playerSelection;
   } 
 }
@@ -100,4 +88,63 @@ function equals(a, b) {
   return a.toLowerCase() == b.toLowerCase();
 }
 
-game();
+function testPlayRound() {
+
+  if (playRound("paper", "scissors") == "You lose! scissors beat paper") {
+    console.log("test ok");
+  } else {
+    console.log("test ko");
+  }
+
+  if (playRound("paper", "rock") == "You win! paper beat rock") {
+    console.log("test ok");
+  } else {
+    console.log("test ko");
+  }
+
+  if (playRound("paper", "paper") == "Draw") {
+    console.log("test ok");
+  } else {
+    console.log("test ko");
+  }
+
+  if (playRound("rock", "paper") == "You lose! paper beat rock") {
+    console.log("test ok");
+  } else {
+    console.log("test ko");
+  }
+
+  if (playRound("rock", "scissors") == "You win! rock beat scissors") {
+    console.log("test ok");
+  } else {
+    console.log("test ko");
+  }
+
+  if (playRound("rock", "rock") == "Draw") {
+    console.log("test ok");
+  } else {
+    console.log("test ko");
+  }
+
+  if (playRound("scissors", "rock") == "You lose! rock beat scissors") {
+    console.log("test ok");
+  } else {
+    console.log("test ko");
+  }
+
+  if (playRound("scissors", "paper") == "You win! scissors beat paper") {
+    console.log("test ok");
+  } else {
+    console.log("test ko");
+  }
+
+  if (playRound("scissors", "scissors") == "Draw") {
+    console.log("test ok");
+  } else {
+    console.log("test ko");
+  }  
+  
+}
+
+// game();
+testPlayRound();
