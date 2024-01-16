@@ -7,50 +7,17 @@ function getComputerChoise() {
 function game() {
   var michele = 0;
   var computer = 0;
-  var result = playRound(prompt(), getComputerChoise());
 
-  if (result.includes("win")) {
-    michele++;
-  } else if (result.includes("lose")) {
-    computer++;
+  for (let i = 0; i < 5; i++) {
+    var result = playRound(prompt(), getComputerChoise());
+
+    if (result.includes("win")) {
+      michele++;
+    } else if (result.includes("lose")) {
+      computer++;
+    }
+    console.log(result);
   }
-  console.log(result);
-
-  var result = playRound(prompt(), getComputerChoise());
-
-  if (result.includes("win")) {
-    michele++;
-  } else if (result.includes("lose")) {
-    computer++;
-  }
-  console.log(result);
-
-  var result = playRound(prompt(), getComputerChoise());
-
-  if (result.includes("win")) {
-    michele++;
-  } else if (result.includes("lose")) {
-    computer++;
-  }
-  console.log(result);
-
-  var result = playRound(prompt(), getComputerChoise());
-
-  if (result.includes("win")) {
-    michele++;
-  } else if (result.includes("lose")) {
-    computer++;
-  }
-  console.log(result);
-
-  var result = playRound(prompt(), getComputerChoise());
-
-  if (result.includes("win")) {
-    michele++;
-  } else if (result.includes("lose")) {
-    computer++;
-  }
-  console.log(result);
 
   if (michele > computer) {
     alert("Greatings! You win!");
