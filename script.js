@@ -1,31 +1,35 @@
 const choises = ["Rock", "Paper", "Scissors"];
 
-function getComputerChoise() {
+function getComputerChoice() {
   return choises[Math.floor(Math.random() * choises.length)];
 }
 
 function game() {
-  var michele = 0;
+  var player = 0;
   var computer = 0;
-  var round = prompt("Select number of round");
-
+  var round = 1;
+  // prompt("Select number of round");
+console.log(document);
   for (let i = 0; i < round; i++) {
-    var result = playRound(prompt(), getComputerChoise());
+    var playerChoice = document.getElementById("playerChoice").value;
+    var computerChoice = getComputerChoice();
+    document.getElementById("computerChoice").value = computerChoice;
+    var result = playRound(playerChoice, computerChoice);
 
     if (result.includes("win")) {
-      michele++;
+      player++;
     } else if (result.includes("lose")) {
       computer++;
     }
-    console.log(result);
+    document.getElementById("gameResult").innerHTML = result + "<br>";
   }
 
-  if (michele > computer) {
-    alert("Greatings! You win!");
-  } else if (michele == computer) {
-    alert("It's a Draw! Another game?");
+  if (player > computer) {
+    document.getElementById("gameResult").innerHTML += " Greatings! You win!";
+  } else if (player == computer) {
+    document.getElementById("gameResult").innerHTML += " It's a Draw! Another game?";
   } else {
-    alert("Sorry! You lose!");
+    document.getElementById("gameResult").innerHTML += " Sorry! You lose!";
   }
 }
 
@@ -110,4 +114,3 @@ function testPlayRound() {
 }
 
 testPlayRound();
-game();
