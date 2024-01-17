@@ -9,6 +9,7 @@ function game() {
   var computer = 0;
   var round = 1;
   // prompt("Select number of round");
+  // inserire la possibilità di scegliere il numero dei round da giocare e lista dei risultati finali
 console.log(document);
   for (let i = 0; i < round; i++) {
     var playerChoice = document.getElementById("playerChoice").value;
@@ -33,7 +34,7 @@ console.log(document);
   }
 }
 
-//migliorare algoritmo vittorie
+//migliorare algoritmo vittorie?
 function playRound(playerSelection, computerSelection) {
   var winAgainst = {
     paper: "rock",
