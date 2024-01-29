@@ -1,6 +1,83 @@
+body {
+  background-color: #3c0753;
+}
 
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+}
 
-h1{
-    background-color: yellow;
-    color: red;
+.player{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.computer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+  font-family: "Honk", system-ui;
+  font-size: 5em;
+}
+
+label {
+  color: #910a67;
+  font-family: "Honk", system-ui;
+  font-size: 2em;
+}
+
+.btn {
+  background: #910a67;
+  background-image: -webkit-linear-gradient(top, #910a67, #720455);
+  background-image: -moz-linear-gradient(top, #910a67, #720455);
+  background-image: -ms-linear-gradient(top, #910a67, #720455);
+  background-image: -o-linear-gradient(top, #910a67, #720455);
+  background-image: linear-gradient(to bottom, #910a67, #720455);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: "Honk", system-ui;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-top: 1em;
+}
+
+.btn:hover {
+  background: #3c0753;
+  background-image: -webkit-linear-gradient(top, #3c0753, #030637);
+  background-image: -moz-linear-gradient(top, #3c0753, #030637);
+  background-image: -ms-linear-gradient(top, #3c0753, #030637);
+  background-image: -o-linear-gradient(top, #3c0753, #030637);
+  background-image: linear-gradient(to bottom, #3c0753, #030637);
+  text-decoration: none;
+}
+
+#gameResult {
+  font-family: "Honk", system-ui;
+  font-size: 2em;
+}
+
+input[type="text"]{
+    font-size:1em;
+    font-family: 'Roboto', sans-serif;
+    color: #3c0753;
+    width: 4.5em;
+    border-radius: 28px;
+    padding-left: 15px;
+    padding-right: 10px;
 }
