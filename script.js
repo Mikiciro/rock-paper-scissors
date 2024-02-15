@@ -34,7 +34,6 @@ console.log(document);
   }
 }
 
-//migliorare algoritmo vittorie?
 function playRound(playerSelection, computerSelection) {
   var winAgainst = {
     paper: "rock",
