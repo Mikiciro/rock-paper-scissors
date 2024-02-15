@@ -4,53 +4,63 @@ function getComputerChoice() {
   return choises[Math.floor(Math.random() * choises.length)];
 }
 
-// function game() {
-  // var player = 0;
-  // var computer = 0;
-  // var round = 1;
 
-  // for (let i = 0; i < round; i++) {
-  //   var playerChoice = document.getElementById("playerChoice").value;
-  //   var computerChoice = getComputerChoice();
-  //   document.getElementById("computerChoice").value = computerChoice;
-  //   var result = playRound(playerChoice, computerChoice);
 
-  //   if (result.includes("win")) {
-  //     player++;
-  //   } else if (result.includes("lose")) {
-  //     computer++;
-  //   }
-  //   document.getElementById("gameResult").innerHTML = result + "<br>";
-  // }
+function game() {
+  var player = 0;
+  var computer = 0;
+  var round = 3;
 
-  // if (player > computer) {
-  //   document.getElementById("gameResult").innerHTML += " Greatings! You win!";
-  // } else if (player == computer) {
-  //   document.getElementById("gameResult").innerHTML += " It's a Draw! Another game?";
-  // } else {
-  //   document.getElementById("gameResult").innerHTML += " Sorry! You lose!";
-  // }
-// }
+  for (let i = 0; i < round; i++) {
+    var playerChoice = document.getElementById("playerChoice").value;
+    var computerChoice = getComputerChoice();
+    document.getElementById("computerChoice").value = computerChoice;
+    var result = playRound(playerChoice, computerChoice);
 
-// function playRound(playerSelection, computerSelection) {
-//   var winAgainst = {
-//     paper: "rock",
-//     scissors: "paper",
-//     rock: "scissors",
-//   };
+    if (result.includes("win")) {
+      player++;
+    } else if (result.includes("lose")) {
+      computer++;
+    }
+    document.getElementById("gameResult").innerHTML = result + "<br>";
 
-//   if (equals(playerSelection, computerSelection)) {
-//      return "Draw";
-//    }
-//    if (equals(winAgainst[playerSelection], computerSelection)) {
-//      return "You win! " + playerSelection + " beat " + computerSelection;
-//    } else {
-//      return "You lose! " + computerSelection + " beat " + playerSelection;
-//    }
-// }
-//  function equals(a, b) {
-//    return a.toLowerCase() == b.toLowerCase();
-//  }
+    if (player == round) {
+      document.getElementById("gameResult").innerHTML = result + "<br>";
+    }
+
+    if (computer == round){
+      document.getElementById("gameResult").innerHTML = result + "<br>";
+    }
+  }
+
+  if (player > computer) {
+    document.getElementById("gameResult").innerHTML += " Greatings! You win!";
+  } else if (player == computer) {
+    document.getElementById("gameResult").innerHTML += " It's a Draw! Another game?";
+  } else {
+    document.getElementById("gameResult").innerHTML += " Sorry! You lose!";
+  }
+}
+
+function playRound(playerSelection, computerSelection) {
+  var winAgainst = {
+    paper: "rock",
+    scissors: "paper",
+    rock: "scissors",
+  };
+
+  if (equals(playerSelection, computerSelection)) {
+     return "Draw";
+   }
+   if (equals(winAgainst[playerSelection], computerSelection)) {
+     return "You win! " + playerSelection + " beat " + computerSelection;
+   } else {
+     return "You lose! " + computerSelection + " beat " + playerSelection;
+   }
+}
+ function equals(a, b) {
+   return a.toLowerCase() == b.toLowerCase();
+ }
 
 //FUNZIONE DEI TEST
 
